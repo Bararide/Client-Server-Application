@@ -4,7 +4,7 @@ from ctypes import cdll
 from database_handler import Database_handler
 
 dh = Database_handler()
-library = cdll.LoadLibrary('../server_base/server.so')
+library = cdll.LoadLibrary('/home/bararide/code_folder/Genesis/server/server.so')
 
 class Server:
     def __init__(self):
@@ -20,4 +20,6 @@ class Server:
         print(library.server(facility_array, len(facility)))
 
 server = Server()
-server.set_town_facility()
+debug = server.set_town_facility()
+
+print(debug)
